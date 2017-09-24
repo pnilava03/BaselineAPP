@@ -1,0 +1,179 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:273), pid=11080, tid=0x0000000000002450
+#
+# JRE version:  (8.0_121-b13) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.121-b13 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002448000):  JavaThread "main" [_thread_in_vm, id=9296, stack(0x00000000026c0000,0x00000000027c0000)]
+
+Stack: [0x00000000026c0000,0x00000000027c0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  java.lang.Class.getDeclaredFields0(Z)[Ljava/lang/reflect/Field;+0
+j  java.lang.Class.access$100(Ljava/lang/Class;Z)[Ljava/lang/reflect/Field;+2
+j  java.lang.Class$Atomic.<clinit>()V+9
+v  ~StubRoutines::call_stub
+j  java.lang.Class.newReflectionData(Ljava/lang/ref/SoftReference;I)Ljava/lang/Class$ReflectionData;+27
+j  java.lang.Class.reflectionData()Ljava/lang/Class$ReflectionData;+45
+j  java.lang.Class.privateGetDeclaredFields(Z)[Ljava/lang/reflect/Field;+4
+j  java.lang.Class.getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;+11
+j  java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl$1.run()Ljava/lang/reflect/Field;+8
+j  java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl$1.run()Ljava/lang/Object;+1
+v  ~StubRoutines::call_stub
+j  java.security.AccessController.doPrivileged(Ljava/security/PrivilegedExceptionAction;)Ljava/lang/Object;+0
+j  java.util.concurrent.atomic.AtomicReferenceFieldUpdater$AtomicReferenceFieldUpdaterImpl.<init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)V+14
+j  java.util.concurrent.atomic.AtomicReferenceFieldUpdater.newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;+10
+j  java.io.BufferedInputStream.<clinit>()V+17
+v  ~StubRoutines::call_stub
+j  java.lang.System.initializeSystemClass()V+70
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0000000053f0d000 JavaThread "Finalizer" daemon [_thread_blocked, id=6352, stack(0x00000000552d0000,0x00000000553d0000)]
+  0x0000000053ec4000 JavaThread "Reference Handler" daemon [_thread_blocked, id=8328, stack(0x00000000551a0000,0x00000000552a0000)]
+=>0x0000000002448000 JavaThread "main" [_thread_in_vm, id=9296, stack(0x00000000026c0000,0x00000000027c0000)]
+
+Other Threads:
+  0x0000000053ebb800 VMThread [stack: 0x0000000055010000,0x0000000055110000] [id=10308]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 38400K, used 665K [0x00000000f5580000, 0x00000000f8000000, 0x0000000100000000)
+  eden space 33280K, 2% used [0x00000000f5580000,0x00000000f5626670,0x00000000f7600000)
+  from space 5120K, 0% used [0x00000000f7b00000,0x00000000f7b00000,0x00000000f8000000)
+  to   space 5120K, 0% used [0x00000000f7600000,0x00000000f7600000,0x00000000f7b00000)
+ ParOldGen       total 87552K, used 0K [0x00000000e0000000, 0x00000000e5580000, 0x00000000f5580000)
+  object space 87552K, 0% used [0x00000000e0000000,0x00000000e0000000,0x00000000e5580000)
+ Metaspace       used 1203K, capacity 4480K, committed 4480K, reserved 1056768K
+  class space    used 136K, capacity 384K, committed 384K, reserved 1048576K
+
+Card table byte_map: [0x0000000002510000,0x0000000002620000] byte_map_base: 0x0000000001e10000
+
+Marking Bits: (ParMarkBitMap*) 0x000000005ae7b6d0
+ Begin Bits: [0x0000000012430000, 0x0000000012c30000)
+ End Bits:   [0x0000000012c30000, 0x0000000013430000)
+
+Polling page: 0x0000000000510000
+
+CodeCache: size=245760Kb used=405Kb max_used=405Kb free=245354Kb
+ bounds [0x0000000002a90000, 0x0000000002d00000, 0x0000000011a90000]
+ total_blobs=105 nmethods=0 adapters=79
+ compilation: enabled
+
+Compilation events (0 events):
+No events
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (2 events):
+Event: 0.042 Thread 0x0000000002448000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x00000000f5587ca8) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u121\8372\hotspot\
+Event: 0.042 Thread 0x0000000002448000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x00000000f5587f90) thrown at [C:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u121\8372\hotspot\src\share\vm\prims
+
+Events (10 events):
+Event: 0.051 loading class sun/reflect/generics/repository/AbstractRepository
+Event: 0.051 loading class sun/reflect/generics/repository/AbstractRepository done
+Event: 0.051 loading class sun/reflect/generics/repository/GenericDeclRepository done
+Event: 0.051 loading class sun/reflect/generics/repository/ClassRepository done
+Event: 0.051 loading class java/lang/Class$AnnotationData
+Event: 0.051 loading class java/lang/Class$AnnotationData done
+Event: 0.051 loading class sun/reflect/annotation/AnnotationType
+Event: 0.052 loading class sun/reflect/annotation/AnnotationType done
+Event: 0.052 loading class java/lang/ClassValue$ClassValueMap
+Event: 0.052 loading class java/util/WeakHashMap
+
+
+Dynamic libraries:
+0x000000013f5f0000 - 0x000000013f627000 	C:\Program Files\Java\jre1.8.0_121\bin\java.exe
+0x0000000076d00000 - 0x0000000076eaa000 	C:\Windows\SYSTEM32\ntdll.dll
+0x0000000076be0000 - 0x0000000076cff000 	C:\Windows\system32\kernel32.dll
+0x000007fefca30000 - 0x000007fefca9a000 	C:\Windows\system32\KERNELBASE.dll
+0x00000000746e0000 - 0x000000007476e000 	C:\Windows\System32\SYSFER.DLL
+0x000007fefd080000 - 0x000007fefd15b000 	C:\Windows\system32\ADVAPI32.dll
+0x000007fefd4d0000 - 0x000007fefd56f000 	C:\Windows\system32\msvcrt.dll
+0x000007fefd060000 - 0x000007fefd07f000 	C:\Windows\SYSTEM32\sechost.dll
+0x000007fefcf30000 - 0x000007fefd05d000 	C:\Windows\system32\RPCRT4.dll
+0x0000000060010000 - 0x0000000060362000 	C:\ProgramData\Symantec\Symantec Endpoint Protection\14.0.2415.0200.105\Data\Definitions\IPSDefs\20170920.023\IPSEng64.dll
+0x0000000076ed0000 - 0x0000000076ed7000 	C:\Windows\system32\PSAPI.DLL
+0x0000000076ae0000 - 0x0000000076bda000 	C:\Windows\system32\USER32.dll
+0x000007fefcec0000 - 0x000007fefcf27000 	C:\Windows\system32\GDI32.dll
+0x000007fefe9a0000 - 0x000007fefe9ae000 	C:\Windows\system32\LPK.dll
+0x000007fefd570000 - 0x000007fefd63b000 	C:\Windows\system32\USP10.dll
+0x000007fefb1f0000 - 0x000007fefb3e4000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_fa3b1e3d17594757\COMCTL32.dll
+0x000007fefe420000 - 0x000007fefe491000 	C:\Windows\system32\SHLWAPI.dll
+0x000007fef58b0000 - 0x000007fef58b3000 	C:\Windows\system32\api-ms-win-core-synch-l1-2-0.DLL
+0x000007fefce90000 - 0x000007fefcebe000 	C:\Windows\system32\IMM32.DLL
+0x000007fefd160000 - 0x000007fefd269000 	C:\Windows\system32\MSCTF.dll
+0x000000005f220000 - 0x000000005f2f2000 	C:\Program Files\Java\jre1.8.0_121\bin\msvcr100.dll
+0x000000005a660000 - 0x000000005aefb000 	C:\Program Files\Java\jre1.8.0_121\bin\server\jvm.dll
+0x000007fef6cd0000 - 0x000007fef6cd9000 	C:\Windows\system32\WSOCK32.dll
+0x000007fefd640000 - 0x000007fefd68d000 	C:\Windows\system32\WS2_32.dll
+0x000007fefe9b0000 - 0x000007fefe9b8000 	C:\Windows\system32\NSI.dll
+0x000007fefa720000 - 0x000007fefa75b000 	C:\Windows\system32\WINMM.dll
+0x000007fefbac0000 - 0x000007fefbacc000 	C:\Windows\system32\VERSION.dll
+0x0000000066040000 - 0x000000006604f000 	C:\Program Files\Java\jre1.8.0_121\bin\verify.dll
+0x0000000066010000 - 0x0000000066039000 	C:\Program Files\Java\jre1.8.0_121\bin\java.dll
+0x0000000065660000 - 0x0000000065676000 	C:\Program Files\Java\jre1.8.0_121\bin\zip.dll
+0x000007fefd690000 - 0x000007fefe41b000 	C:\Windows\system32\SHELL32.dll
+0x000007fefd270000 - 0x000007fefd46c000 	C:\Windows\system32\ole32.dll
+0x000007fefca00000 - 0x000007fefca0f000 	C:\Windows\system32\profapi.dll
+
+VM Arguments:
+jvm_args: -Xmx512M 
+java_command: C:\Users\nilava.pal\AppData\Roaming\npm\node_modules\appium\node_modules\appium-adb\jars\appium_apk_tools.jar stringsFromApk D:\AutomationProject\BaselineAPP\resources\File\VodafoneIN_Callertunes_v2.0.7.apk C:\Users\nilava.pal\AppData\Local\Temp\br.com.vodain.ringbacktones en
+java_class_path (initial): C:\Users\nilava.pal\AppData\Roaming\npm\node_modules\appium\node_modules\appium-adb\jars\appium_apk_tools.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.8.0_121
+_JAVA_OPTIONS=-Xmx512M
+USERNAME=nilava.pal
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.23864)
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 69 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 8291936k(907456k free), swap 8290076k(4900k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.121-b13) for windows-amd64 JRE (1.8.0_121-b13), built on Dec 12 2016 18:21:36 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Fri Sep 22 02:21:08 2017
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

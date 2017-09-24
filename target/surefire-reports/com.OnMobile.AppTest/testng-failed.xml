@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [com.OnMobile.AppTest]">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="com.OnMobile.AppTest">
+        <methods>
+          <include name="exit_From_App"/>
+          <include name="runAppium"/>
+          <include name="stopAppium"/>
+          <include name="allowMeToAppPermison"/>
+          <include name="launchApp"/>
+        </methods>
+      </class> <!-- com.OnMobile.AppTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [com.OnMobile.AppTest] -->

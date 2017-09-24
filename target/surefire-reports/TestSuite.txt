@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 0.793 sec <<< FAILURE!
+start_Appiumserver(com.OnMobile.AppTest)  Time elapsed: 0 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.OnMobile.GenericLib.ReusableMethod.waitForFullpageToLoad(ReusableMethod.java:19)
+	at com.OnMobile.AppTest.start_Appiumserver(AppTest.java:27)
